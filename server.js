@@ -112,7 +112,7 @@ var pool=new Pool(config);
 app.get('/test-db',function(req,res){
    //make a sekect request
    //and return the respnse 
-   pool.query("select *from  test ").function(res,result){
+   pool.query("select *from  test ",function(err,result){
        if(err){
            res.status(500).send(err.toString());
            
@@ -122,8 +122,10 @@ app.get('/test-db',function(req,res){
        }
            
        
-   }
+   });
 });
+
+
   var counter=0;
 app.get('/counter', function (req, res) {
   
