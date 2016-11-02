@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var pool=require('pg').Pool;
+var pool=require('pg');
 var config={
     user:'srajan96',
     database:'srajan96',
@@ -107,7 +107,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var pool=new Pool(config);
+var pool=new pg.Pool(config);
 
 app.get('/test-db',function(req,res){
    //make a sekect request
