@@ -7,7 +7,7 @@ var config={
     database:'srajan96',
     host:'db.imad.hasura-app.io',
     port:'5432', 
-    password: process.env.DB_PASSWORD
+    password: 'db-srajan96-31509'
 };
 
 var app = express();
@@ -118,7 +118,7 @@ app.get('/test-db',function(req,res){
            
        }
        else{
-           res.send(JSON.stringify(result));
+           res.send(JSON.stringify(result.rows));
        }
            
        
