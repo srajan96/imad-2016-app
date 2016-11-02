@@ -153,6 +153,7 @@ app.get('/articles/:articleName', function (req, res) {
             re.status(404).send("Article not found");
             else{
             var articleData=result.rows[0];
+            console.log(articleData);
                   res.send(createTemplate([articleData]));
             }
             
